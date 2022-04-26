@@ -30,6 +30,12 @@ public class Users {
 	@Column(name = "password")
 	private String password;
 
+	@Column(name = "firstName")
+	private String firstName;
+
+	@Column(name = "lastName")
+	private String lastName;
+	
 	@Column(name = "role")
 	private String role;
 
@@ -38,11 +44,13 @@ public class Users {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(Long id, String emailId, String password, String role) {
+	public Users(Long id, String emailId, String password, String firstName, String lastName, String role) {
 		super();
 		Id = id;
 		this.emailId = emailId;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.role = role;
 	}
 
@@ -70,6 +78,22 @@ public class Users {
 		this.password = password;
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getRole() {
 		return role;
 	}
@@ -77,7 +101,5 @@ public class Users {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
-	
 
 	}
