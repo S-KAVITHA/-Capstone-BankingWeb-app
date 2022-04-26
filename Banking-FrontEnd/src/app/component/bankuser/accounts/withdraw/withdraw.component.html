@@ -1,0 +1,118 @@
+<!-- Bootstrap Form with validation -->
+<div class="container form-container" bg-primary>
+    <h3 style="text-align: center;">Account Withdrawal</h3> <br>
+    <form class="form-validate" [formGroup]="withdrawForm" (ngSubmit)="onSubmit(withdrawForm)">
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="accountNo">Account No</label></strong>
+                    <select #account (change)="update($event)" type="accountNo" class="form-control" name="accountNo"
+                        id="accountNo" formControlName="accountNo">
+                        <option value="default"></option>
+                        <option *ngFor="let acct of acctlist" [value]="acct"> {{acct}}</option>
+                    </select>
+                    <span style="color : red;" *ngIf="accountNo && accountNo.invalid && accountNo.touched"> Account No is required</span>   
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="accttype">Account Type</label></strong>
+                    <select id="accttype" name="accttype" class="form-control" formControlName="accttype" required>
+                        <option value="default"></option>
+                        <option value="Current Account" selected>Curent Account</option>
+                        <option value="Saving Account">Saving Account</option>
+                        <option value="Provident Fund Account">Provident Fund Account</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="acctbranch">Account Branch</label></strong>
+                    <select id="acctbranch" name="acctbranch" class="form-control" Placeholder=" "
+                        formControlName="acctbranch" required>
+                        <option value="default"></option>
+                        <option value="Manchester" selected>Manchester</option>
+                        <option value="St Louis">St Louis</option>
+                        <option value="Ballwin">Ballwin</option>
+                        <option value="Ofallon">Ofallon</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="amount">Amount</label></strong><br>
+
+                    <input type="amount" class="form-control" name="amount" id="amount" formControlName="amount">
+                    <span style = "color : red;" *ngIf="amount && amount.invalid && amount.touched"> Amount is required</span>
+     
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="currency">Currency</label></strong>
+                    <select id="currency" name="currency" class="form-control" Placeholder=" "
+                        formControlName="currency" required>
+                        <option value="default"></option>
+                        <option value="INR" selected>Indian Rupees</option>
+                        <option value="GBP">Great Britan Pound</option>
+                        <option value="USD">United State Dollars</option>
+                        <option value="CAD">Candian Dollars</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="custName">Customer Name</label></strong>
+                    <input type="custName" class="form-control" name="custName" id="custName"
+                        formControlName="custName">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <fieldset formGroupName="customerId">
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <strong> <label for="customerId">CustomerID</label></strong><br>
+
+                        <input type="customerId" class="form-control" name="customerId" id="customerId"
+                            formControlName="customerId">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+
+                    <input type="hidden" name="txntype" value="withdraw" class="form-control" id="txntype" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <button type="submit" name="clickOK" class="btn btn-primary btn-lg btn-block">Submit</button> &nbsp;&nbsp;&nbsp;
+            </div>
+
+            <div class="col-3"></div>
+        </div>
+
+    </form>
+
+</div>

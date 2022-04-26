@@ -1,0 +1,123 @@
+<!-- Bootstrap Form with validation -->
+<div class="container form-container" bg-primary>
+    <h3 style="text-align: center;">Open Account </h3> <br>
+    <form class="form-validate" [formGroup]="acctopenForm" (ngSubmit)="onSubmit(acctopenForm)">
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="accttype">Account Type</label></strong>
+                    <select id="accttype" name="accttype" class="form-control" formControlName="accttype" required>
+                        <option value="default"></option>
+                        <option value="Current Account" selected>Current Account</option>
+                        <option value="Saving Account">Savings Account</option>
+                        <option value="Provident Fund Account">Provident Fund Account</option>
+                    </select>
+
+                    <small *ngIf="hasError('accttype')" [class]="hasError('accttype') ? 'has-error' :''">
+                        <div *ngIf="accttype?.errors">
+                            <span *ngIf="accttype?.errors?.['required']">Type is a required field</span>
+                            
+                        </div>
+                      </small>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="acctbranch">Account Branch</label></strong>
+                    <select id="acctbranch" name="acctbranch" class="form-control" Placeholder=" "
+                        formControlName="acctbranch" required>
+                        <option value="default"></option>
+                        <option value="Manchester" selected>Manchester</option>
+                        <option value="St Louis">St Louis</option>
+                        <option value="Ballwin">Ballwin</option>
+                        <option value="Ofallon">Ofallon</option>
+                    </select>
+
+                    <small *ngIf="hasError('acctbranch')" [class]="hasError('acctbranch') ? 'has-error' :''">
+                        <div *ngIf="acctbranch?.errors">
+                            <span *ngIf="acctbranch?.errors?.['required']">Branch is a required field</span>
+                            
+                        </div>
+                      </small>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="currency">Currency</label></strong>
+                    <select id="currency" name="currency" class="form-control" Placeholder=" "
+                        formControlName="currency" required>
+                        <option value="default"></option>
+                        <option value="INR" selected>Indian Rupees</option>
+                        <option value="GBP">Great Britan Pound</option>
+                        <option value="USD">United State Dollars</option>
+                        <option value="CAD">Candian Dollars</option>
+                    </select>
+
+                    <small *ngIf="hasError('currency')" [class]="hasError('currency') ? 'has-error' :''">
+                        <div *ngIf="currency?.errors">
+                            <span *ngIf="currency?.errors?.['required']">Currency is a required field</span>
+                            
+                        </div>
+                      </small>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="custName">Customer Name</label></strong>
+                    <input type="custName" class="form-control" name="custName" id="custName"
+                        formControlName="custName">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <fieldset formGroupName="customerId">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <strong> <label for="customerId">CustomerID</label></strong><br>
+
+                        <input type="customerId" class="form-control" name="customerId" id="customerId"
+                            formControlName="customerId" [disabled]="true">
+
+
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="form-group">
+
+                <input type="hidden" name="status" value="submitted" class="form-control" id="status" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+
+                <button type="submit"  name= "clickOk" class="btn btn-primary btn-lg btn-block">Submit</button> &nbsp;&nbsp;&nbsp;
+
+
+            </div>
+
+            <div class="col-3"></div>
+        </div>
+
+    </form>
+
+</div>

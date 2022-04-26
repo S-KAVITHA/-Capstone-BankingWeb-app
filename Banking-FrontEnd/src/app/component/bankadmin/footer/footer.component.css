@@ -1,0 +1,25 @@
+.btn-success{
+    background-color: #4cbb2e;
+}
+
+.btn-primary   {
+background-color: #31462b;
+}
+
+.h3 .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: larger;
+    line-height: 1.1;
+}
+b, strong {
+    font-weight: bold;
+}
+.container{
+    max-width: 100%;
+   height: 50px;
+   
+   font-weight: lighter;
+ 
+}
+

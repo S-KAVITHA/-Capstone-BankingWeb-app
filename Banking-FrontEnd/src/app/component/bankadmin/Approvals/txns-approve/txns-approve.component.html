@@ -1,0 +1,41 @@
+<br>
+<br>
+
+<h2 style="text-align:center;"> Transactions Approval List</h2>
+
+<br>
+<br>
+                <table class="table table-bordered table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col ">Account No</th>
+                            <th scope="col">Acct Type</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Created Date</th>
+                            <th scope="col">Currency</th>
+                            <th scope="col">Customer Name </th>
+                            <th scope="col">Txn Type</th>
+                            <th scope="col">Customer Id</th>
+
+                            <th colspan="2">Status</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of txnRec">
+
+                            <td>{{item.accountNo}}</td>
+                            <td>{{item.accttype}}</td>
+                            <td>{{item.amount}}</td>
+                            <td>{{item.createdDate}}</td>
+                            <td>{{item.currency}}</td>
+                            <td>{{item.custName}}</td>
+                            <td>{{item.txntype}}</td>
+                            <td>{{item.customerId.customerId}}</td>
+                            <td> <button   name= "approve" (click)="approved(item)" class="btn btn-primary" float-end>Approve</button></td>
+                            <td><button  name= "reject" (click)="rejected(item)"  class="btn btn-primary" float-end>Reject</button> </td>
+                        </tr>
+                    </tbody>
+
+         

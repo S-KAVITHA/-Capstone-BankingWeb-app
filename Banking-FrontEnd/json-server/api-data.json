@@ -1,0 +1,149 @@
+{
+  "account": [
+    {
+      "id": 100940012541,
+      "custno": 1001243,
+      "accttype": "savings",
+      "balance": 5000
+    },
+    {
+      "id": 100540012541,
+      "custno": 1001241,
+      "accttype": "current",
+      "balance": 5000
+    },
+    {
+      "id": 100540012542,
+      "custno": 1001241,
+      "accttype": "savings",
+      "balance": 5000
+    },
+    {
+      "id": 100840012541,
+      "custno": 1001242,
+      "accttype": "current",
+      "balance": 5000
+    },
+    {
+      "id": 100840012542,
+      "custno": 1001242,
+      "accttype": "savings",
+      "balance": 5000
+    }
+  ],
+  "customer": [
+    {
+      "id": 1001242,
+      "name": "Karthik Raj",
+      "emailid": "karthik@gmail.com",
+      "password": "karthik123"
+    },
+    {
+      "id": 1001241,
+      "name": "Ramya Raj",
+      "emailid": "ramya@gmail.com",
+      "password": "ramya123"
+    },
+    {
+      "id": 1001243,
+      "name": "Sumeet Khan",
+      "emailid": "sumeet@gmail.com",
+      "password": "sumeet123"
+    }
+  ],
+  "cutomerAcct": [
+    {
+      "custno": 1001241,
+      "acctno": [
+        100540012541,
+        100540012542
+      ]
+    },
+    {
+      "custno": 1001242,
+      "acctno": [
+        100840012542,
+        100840012541
+      ]
+    },
+    {
+      "custno": 1001243,
+      "acctno": [
+        100940012541
+      ]
+    }
+  ],
+  "users": [
+    {
+      "firstName": "John",
+      "lastName": "Smith",
+      "password": "john@123",
+      "email": "john@gmail.com",
+      "state": "CA",
+      "zipcode": 678675,
+      "agree": true,
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "firstName": "Mike",
+      "lastName": "Smith",
+      "password": "mike@123",
+      "email": "mike@gmail.com",
+      "state": "TX",
+      "zipcode": 56567,
+      "agree": true,
+      "role": "user",
+      "id": 2
+    },
+    {
+      "firstName": "Raja",
+      "lastName": "Kumaran",
+      "password": "1234523",
+      "email": "raja@gmail.com",
+      "state": "CA",
+      "zipcode": 45678,
+      "role": "admin",
+      "agree": true,
+      "id": 3
+    },
+    {
+      "firstName": "Ramya",
+      "lastName": "Pandian",
+      "password": "123456",
+      "email": "ramya@gmail.com",
+      "state": "NY",
+      "zipcode": 123678,
+      "role": "",
+      "agree": true,
+      "id": 4
+    },
+    {
+      "firstName": "Pradeep",
+      "lastName": "Ramamoorthy",
+      "password": "123123",
+      "emailId": "miker@gmail.com",
+      "state": "CA",
+      "zipcode": 63368,
+      "agree": true,
+      "role": "user",
+      "customerId": 0,
+      "id": 5
+    }
+  ],
+  "cartitem": [
+    {
+      "id": 102,
+      "name": "Apple Watch SE Smartwatch",
+      "price": "30900",
+      "description": "Apple Watch SE Smartwatch (GPS, 44mm) (Heart Rate Monitoring, MYDT2HN/A, Space Grey/Black, Sport Band)//"
+    },
+    {
+      "name": "Apple MacBook Air (MGND3HN/A) ",
+      "price": "83900",
+      "description": "Apple MacBook Air (MGND3HN/A) M1 Chip macOS Big Sur Laptop (8GB RAM, 256GB SSD, Apple M1 GPU, 33.78cm, Gold)",
+      "id": 104
+    }
+  ],
+  "payments": []
+}

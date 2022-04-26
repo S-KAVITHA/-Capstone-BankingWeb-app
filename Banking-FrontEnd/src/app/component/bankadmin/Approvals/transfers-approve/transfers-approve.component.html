@@ -1,0 +1,37 @@
+<br>
+<br>
+
+<h2 style="text-align:center;"> Transfer Approval List</h2>
+
+<br>
+<br>
+                <table class="table table-bordered table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col ">fromAcctNo</th>
+                            <th scope="col">fromAccbranch</th>
+                            <th scope="col">fromAcctype</th>
+                            <th scope="col">toAcctNo</th>
+                            <th scope="col">toAccbranch</th>
+                            <th scope="col">toAcctype</th>
+                            <th scope="col">toAccCCY</th>
+                            <th scope="col">fromAccCCY</th>
+                            <th scope="col">amount</th>
+                            <th colspan="2">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of transferRec">
+                            <td>{{item.fromAcctNo}}</td>
+                            <td>{{item.fromAccbranch}}</td>
+                            <td>{{item.fromAcctype}}</td>
+                            <td>{{item.toAcctNo}}</td>
+                            <td>{{item.toAccbranch}}</td>
+                            <td>{{item.toAcctype}}</td>
+                            <td>{{item.toAccCCY}}</td>
+                            <td>{{item.fromAccCCY}}</td>
+                            <td>{{item.amount}}</td>
+                            <td> <button   name= "approve" (click)="approved(item)" class="btn btn-primary" float-end>Approve</button></td>
+                            <td><button  name= "reject"  (click)="rejected(item)"  class="btn btn-primary" float-end>Reject</button> </td>
+                        </tr>
+                    </tbody>

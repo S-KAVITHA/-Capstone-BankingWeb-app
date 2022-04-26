@@ -1,0 +1,117 @@
+<!-- Bootstrap Form with validation -->
+<div class="container form-container" bg-primary>
+  <h3 style="text-align: center;">Edit Profile</h3> <br>
+  <form class="form-validate" [formGroup]="editform" (ngSubmit)="onSubmit(editform)">
+
+    <input type="firstName" hidden class="form-control" name="firstName" id="firstName" formControlName="firstName">
+    <input type="lastName" hidden class="form-control" name="lastName" id="lastName" formControlName="lastName">
+    <input type="customerId" hidden class="form-control" name="customerId" id="customerId" formControlName="customerId">
+    <input type="birthDate" hidden class="form-control" name="birthDate" id="birthDate" formControlName="birthDate">
+    <input type="agree" hidden class="form-control" name="agree" id="agree" formControlName="agree">
+    <input type="createdDate" hidden class="form-control" name="createdDate" id="createdDate"
+      formControlName="createdDate">
+    <input type="status" hidden class="form-control" name="status" id="status" formControlName="status">
+
+    <div class="form-row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <strong> <label for="accountNo">emailId</label></strong>
+          <input type="emailId" class="form-control" name="emailId" id="emailId" formControlName="emailId"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <strong> <label for="accttype">password</label></strong>
+          <input type="password" class="form-control" name="password" id="password" formControlName="password">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <strong> <label for="address">Address </label></strong>
+          <input type="address" class="form-control" name="address" id="address" formControlName="address">
+
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <strong> <label for="city">City</label></strong><br>
+          <input type="city" class="form-control" name="city" id="city" formControlName="city">
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-sm-6">
+        <label for="inputState">State</label>
+
+        <select id="state" name="state" class="form-control" formControlName="state" required>
+          <option value="NY" selected>New York</option>
+          <option value="TX">Texas</option>
+          <option value="CA">California</option>
+          <option value="HW">Hawaii</option>
+        </select>
+      </div>
+
+
+      <div class="form-group col-sm-6">
+        <label for="zipcode">Zip Code</label><br>
+        <input type="zipcode" class="form-control" name="zipcode" id="zipcode" formControlName="zipcode">
+
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <strong> <label for="country">Country</label></strong>
+          <select id="country" name="country" class="form-control" Placeholder=" " formControlName="country" required>
+            <option value="default"></option>
+            <option value="USA" selected>USA</option>
+            <option value="UK">United Kingdom</option>
+            <option value="IN">India</option>
+            <option value="GY">Germany</option>
+          </select>
+        </div>
+      </div>
+
+
+      
+    <div class="form-row">
+      <div class="form-group col-sm-6">
+        <div class="form-check">
+
+          <input class="form-check-input" type="checkbox" id="agree" name="agree" formControlName="agree"
+             required>
+
+          <label class="form-check-label" for="agree">
+            Please check the terms and conditions!
+          </label>
+         
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <button type="submit" name="clickOK" class="btn btn-primary btn-lg btn-block">Submit</button> &nbsp;&nbsp;&nbsp;
+      </div>
+
+      <div class="col-3"></div>
+    </div>
+
+  </form>
+
+</div>

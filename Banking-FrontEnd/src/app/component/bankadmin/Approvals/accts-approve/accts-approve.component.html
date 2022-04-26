@@ -1,0 +1,45 @@
+
+<br>
+<br>
+
+<h2 style="text-align:center;"> Account Approval List</h2>
+
+<br>
+<br>
+
+
+
+                <table class="table table-bordered table-primary">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">Account Id</th>
+                            <th scope="col ">Account Type</th>
+                            <th scope="col">Account Branch</th>
+                            <th scope="col">Currency</th>
+                            <th scope="col">Customer Id</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Balance</th>
+                            <th colspan="2">Status</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of acctRec">
+
+                            <td>{{ item.accountId }}</td>
+                            <td>{{item.accttype }}</td>
+                            <td>{{ item.acctbranch }}</td>
+                            <td>{{ item.currency }}</td>
+                            <td>{{ item.customerId.customerId }}</td>
+                            <td>{{ item.custName }}</td>
+                            <td>{{ item.balance }}</td>
+                           
+                            <td> <button  name= "approve" (click)="approved(item)" class="btn btn-primary" float-end>Approve</button></td>
+                            <td><button  name= "reject" (click)="rejected(item)"  class="btn btn-primary" float-end>Reject</button> </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            

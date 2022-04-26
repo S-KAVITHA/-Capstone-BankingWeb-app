@@ -1,0 +1,162 @@
+<!-- Bootstrap Form with validation -->
+<div class="container form-container">
+    <h3 style="text-align: center;">Funds Transfer</h3> <br>
+    <div *ngIf="message!=''" class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+
+    <form class="form-validate" [formGroup]="transferForm" (ngSubmit)="onSubmit(transferForm)">
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="fromAcctNo"> From Account</label></strong>
+                    <select #cricket (change)="updateFrom($event)" type="fromAcctNo" class="form-control"
+                        name="fromAcctNo" id="fromAcctNo" formControlName="fromAcctNo" required="">
+                        <option value="default"></option>
+                        <option *ngFor="let acct of acctlist" [value]="acct"> {{acct}}</option>
+                    </select>
+                    <span style="color : red;" *ngIf="fromAcctNo && fromAcctNo.invalid && fromAcctNo.touched"> From
+                        Account No is required</span>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="toAcctNo"> To Account</label></strong>
+                    <select #cricket (change)="updateTo($event)" type="toAcctNo" class="form-control" name="toAcctNo"
+                        id="toAcctNo" formControlName="toAcctNo" required="">
+                        <option value="default"></option>
+                        <option *ngFor="let acct of acctlist" [value]="acct"> {{acct}}</option>
+                    </select>
+                    <span style="color : red;" *ngIf="toAcctNo && toAcctNo.invalid && toAcctNo.touched"> To Account No
+                        is required</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="fromAcctype">From Account Type</label></strong>
+                    <select id="fromAcctype" name="fromAcctype" class="form-control" formControlName="fromAcctype"
+                        required>
+                        <option value="default"></option>
+                        <option value="Current Account" selected>Curent Account</option>
+                        <option value="Saving Account">Saving Account</option>
+                        <option value="Provident Fund Account">Provident Fund Account</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="toAcctype">To Account Type</label></strong>
+                    <select id="toAcctype" name="toAcctype" class="form-control" formControlName="toAcctype" required>
+                        <option value="default"></option>
+                        <option value="Current Account" selected>Curent Account</option>
+                        <option value="Saving Account">Saving Account</option>
+                        <option value="Provident Fund Account">Provident Fund Account</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="fromAccbranch">From Account Branch</label></strong>
+                    <select id="fromAccbranch" name="fromAccbranch" class="form-control" Placeholder=" "
+                        formControlName="fromAccbranch" required>
+                        <option value="default"></option>
+                        <option value="Manchester" selected>Manchester</option>
+                        <option value="St Louis">St Louis</option>
+                        <option value="Ballwin">Ballwin</option>
+                        <option value="Ofallon">Ofallon</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="toAccbranch">To Account Branch</label></strong>
+                    <select id="toAccbranch" name="toAccbranch" class="form-control" Placeholder=" "
+                        formControlName="toAccbranch" required>
+                        <option value="default"></option>
+                        <option value="Manchester" selected>Manchester</option>
+                        <option value="St Louis">St Louis</option>
+                        <option value="Ballwin">Ballwin</option>
+                        <option value="Ofallon">Ofallon</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="fromAccCCY">From Currency</label></strong>
+                    <select id="fromAccCCY" name="fromAccCCY" class="form-control" Placeholder=" "
+                        formControlName="fromAccCCY" required>
+                        <option value="default"></option>
+                        <option value="INR" selected>Indian Rupees</option>
+                        <option value="GBP">Great Britan Pound</option>
+                        <option value="USD">United State Dollars</option>
+                        <option value="CAD">Candian Dollars</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="toAccCCY">To Currency</label></strong>
+                    <select id="toAccCCY" name="toAccCCY" class="form-control" Placeholder=" "
+                        formControlName="toAccCCY" required>
+                        <option value="default"></option>
+                        <option value="INR" selected>Indian Rupees</option>
+                        <option value="GBP">UK Pound</option>
+                        <option value="USD">United State Dollars</option>
+                        <option value="CAD">Candian Dollars</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <strong> <label for="amount">Amount</label></strong><br>
+                    <input type="amount" class="form-control" name="amount" Placeholder=" amount" id="amount"
+                        formControlName="amount" aria-describedby="amountHelp" size="100">
+
+                    <span style="color : red;" *ngIf="amount && amount.invalid && amount.touched"> Amount is
+                        required</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+
+                <button type="submit" name="clickOK" class="btn btn-primary btn-lg btn-block">Submit</button> &nbsp;&nbsp;&nbsp;
+
+
+            </div>
+
+        </div>
+    </form>
+
+</div>

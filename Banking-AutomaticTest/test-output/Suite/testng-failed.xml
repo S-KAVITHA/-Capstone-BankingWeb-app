@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.example.demo.AccountWithdraw">
+        <methods>
+          <include name="Accountwithdraw"/>
+        </methods>
+      </class> <!-- com.example.demo.AccountWithdraw -->
+      <class name="com.example.demo.ChequeRequest">
+        <methods>
+          <include name="AdminCustApprove"/>
+          <include name="AdminLoginPass"/>
+          <include name="Transfer"/>
+        </methods>
+      </class> <!-- com.example.demo.ChequeRequest -->
+      <class name="com.example.demo.AccountBalance">
+        <methods>
+          <include name="Accountbalance"/>
+        </methods>
+      </class> <!-- com.example.demo.AccountBalance -->
+      <class name="com.example.demo.AccountDeposit">
+        <methods>
+          <include name="CustomerLoginPass"/>
+          <include name="AdminLoginPass"/>
+          <include name="TearDown"/>
+          <include name="Accountdeposit"/>
+          <include name="AdminCustApprove"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- com.example.demo.AccountDeposit -->
+      <class name="com.example.demo.AccountTransfer">
+        <methods>
+          <include name="Transfer"/>
+        </methods>
+      </class> <!-- com.example.demo.AccountTransfer -->
+      <class name="com.example.demo.AccountCreation">
+        <methods>
+          <include name="AdminLoginPass"/>
+          <include name="AdminCustApprove"/>
+          <include name="AccountCreate"/>
+          <include name="TearDown"/>
+        </methods>
+      </class> <!-- com.example.demo.AccountCreation -->
+      <class name="com.example.demo.CustomerCreation">
+        <methods>
+          <include name="CustomerRegister"/>
+          <include name="TearDown"/>
+          <include name="CustomerLoginFail"/>
+          <include name="CustomerLoginPass"/>
+          <include name="Setup"/>
+          <include name="AdminLoginPass"/>
+          <include name="AdminCustApprove"/>
+        </methods>
+      </class> <!-- com.example.demo.CustomerCreation -->
+      <class name="com.example.demo.AdminRegisterLogin">
+        <methods>
+          <include name="Setup"/>
+          <include name="AdminLoginPass"/>
+          <include name="AdminRegister"/>
+          <include name="TearDown"/>
+          <include name="AdminLoginFail"/>
+        </methods>
+      </class> <!-- com.example.demo.AdminRegisterLogin -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

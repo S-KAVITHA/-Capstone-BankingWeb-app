@@ -1,0 +1,52 @@
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+table {
+    background-color: #ceddd2;
+    border-collapse: separate;
+    margin-bottom: 0rem;
+    
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid black;
+    font-weight:600;
+}
+
+
+.h5, h5 {
+    font-size: 1.1rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    color: #01060c;
+    background-color: rgb(161, 202, 190);
+    background-clip: border-box;
+    border: 1px solid rgb(2, 0, 0);
+    border-radius: 0.25rem;
+}
+
+.card-footer {
+    padding: 0.75rem 1.25rem;
+  font-weight: bolder;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+
+.btn-primary{
+    background-color: #478d33;
+}
+.btn-block {
+    display: inline-block;
+    width: 30%;
+}
+

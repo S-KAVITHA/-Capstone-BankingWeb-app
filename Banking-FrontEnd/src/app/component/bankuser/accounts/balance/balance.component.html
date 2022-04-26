@@ -1,0 +1,49 @@
+<br>
+<br>
+<br>
+
+
+<div class="card-deck" col-lg-4 col-md-6 col-sm-12>
+
+  <div class="card" *ngFor="let account of accounts">
+
+
+    <div class="card-header">
+      <h5 class='card-title' style='color: #01060c;'>Account Balance</h5>
+    </div>
+
+    <div class="card-body">
+
+      <table class="table table-sm table-bordered">
+
+        <tbody>
+
+          <tr>
+            <td>AC Number </td>
+            <td>{{account.accountId}}</td>
+          </tr>
+          <tr>
+            <td>Branch </td>
+            <td>{{account.acctbranch}}</td>
+          </tr>
+
+          <tr>
+            <td>Type </td>
+            <td>{{account.accttype}}</td>
+          </tr>
+
+          <tr>
+            <td>Balance </td>
+            <td>${{account.balance}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted" style='color: #01060c;'> ICIN Bank</small> <br>
+
+    </div>
+  </div>
+  </div>

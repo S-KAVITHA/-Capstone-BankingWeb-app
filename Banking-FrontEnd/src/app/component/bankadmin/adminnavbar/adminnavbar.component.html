@@ -1,0 +1,48 @@
+<div fxFlex fxShow="”true”" fxHide.sm="”true”">
+
+  <nav class="navbar navbar-expand-lg navbar-light  bg-dark" *ngIf="isLoggedIn$ | async as isLoggedIn">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/adminhome">Home <span class="sr-only">(current)</span></a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/blockuser">Block User <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" routerLink="/approvals" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-expanded="false">
+          Approvals
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/approvals/custapprove">Customers </a>
+          <a class="dropdown-item" routerLink="/approvals/acctapprove">Accounts </a>
+          <a class="dropdown-item" routerLink="/approvals/txnapprove">Transactions </a>
+          <a class="dropdown-item" routerLink="/approvals/transferapprove">Transfer </a>
+          <a class="dropdown-item" routerLink="/approvals/chequeapprove">Cheque Request </a>
+        </div>
+        </li>
+      </ul>
+      <div class="container mt-5" style="max-width: 500px;">
+
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <button mat-button name="logout" (click)="onLogout()" *ngIf="isLoggedIn" type="submit"
+          class="btn btn-primary btn-lg btn-block">Logout</button>
+      </form>
+
+
+    </div>
+
+
+  </nav>
+
+</div>

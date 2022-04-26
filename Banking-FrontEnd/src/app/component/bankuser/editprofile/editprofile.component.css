@@ -1,0 +1,22 @@
+.form-container{
+    border: 2px solid black;
+    margin-top: 5%;
+    padding: 3%;
+    background-color:   rgb(161, 202, 190);
+    font-weight: bold;
+    font-size: medium;
+    width: 70%;
+}
+
+.has-error{
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+h1 {
+    color: black;
+  }
+
+  button {
+    background-color: #31462b;
+}

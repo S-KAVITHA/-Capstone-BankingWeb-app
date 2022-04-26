@@ -1,0 +1,79 @@
+<!-- Bootstrap Form with validation -->
+<div class="container form-container" bg-primary>
+    <h1 style="text-align: center;">Please Sigin In</h1> <br>
+    <div *ngIf="message!=''" class="alert alert-danger" role="alert">
+      {{message}}
+    </div>
+    <form  class="form-validate" novalidate [formGroup]="adminloginForm" (ngSubmit)="onSubmit(adminloginForm)">
+    
+     <div class="form-row">
+     <div class="col-sm-3"></div>
+        <!-- Email -->
+       <div class="col-sm-6">
+        <div class="form-group">
+         <strong> <label for="emailId">User Name</label></strong>
+          <input type="emailId" class="form-control" name="emailId" Placeholder=" emailId" id="emailId" formControlName="emailId"
+          aria-describedby="emailIdHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="6" maxlength="20">
+          <small *ngIf="hasError('emailId')" [class]="hasError('emailId') ? 'has-error' :''">
+            <div *ngIf="emailId?.errors">
+                <span *ngIf="emailId?.errors?.['required']">Email is a required field</span>
+                <span *ngIf="emailId?.errors?.['minlength']">Email is a min 6 char long field</span>
+                <span *ngIf="emailId?.errors?.['maxlength']">Email is a max 20 char long field</span>
+                <span *ngIf="emailId?.errors?.['pattern']">Please enter a valid pattern for email</span>
+            </div>
+          </small>
+        </div>
+       </div>
+       <div class="col-sm-3"></div>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-3"></div>
+       <!-- Password -->
+       <div class="col-sm-6">
+        <div class="form-group">
+        <strong> <label for="password">Password</label></strong>
+          <input type="password" class="form-control" name="password"  id="password"  Placeholder=" Password" formControlName="password"  aria-describedby="passwordHelp" minlength="6" maxlength="15" >
+          <small *ngIf="hasError('password')" [class]="hasError('password') ? 'has-error' :''">
+            <div *ngIf="password?.errors">
+                <span *ngIf="password?.errors?.['required']">Password is a required field</span>
+                <span *ngIf="password?.errors?.['minlength']">Password is a min 6 char long field</span>
+                <span *ngIf="password?.errors?.['maxlength']">Password is a max 15 char long field</span>
+            </div>
+          </small>
+        </div>
+       </div>
+       <div class="col-sm-3"></div>
+     </div>
+  
+     <div class="form-row">
+        <div class="col-sm-3"></div>
+        <div class="form-group col-sm-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberme"  name="rememberme"  formControlName="rememberme" >
+            <label class="form-check-label" for="rememberme">
+            <strong>  Remember me !</strong>
+            </label>
+            <small *ngIf="hasError('rememberme')" [class]="hasError('rememberme') ? 'has-error' :''">
+              <div *ngIf="rememberme?.errors">
+                  <span *ngIf="rememberme?.errors?.['required']"> Please check this for rememberme conditions!</span>
+              </div>
+            </small>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+  
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+  
+        <button type="submit" name= "login" class="btn btn-primary btn-lg btn-block">Submit</button> &nbsp;&nbsp;&nbsp;
+        <button type="submit" name= "register" class="btn btn-primary btn-lg btn-block" routerLink="/adminregister">Sign Up</button>
+  
+      </div>
+      
+      <div class="col-3"></div>
+    </div>
+    
+    </form>
+  </div>
