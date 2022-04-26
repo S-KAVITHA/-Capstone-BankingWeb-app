@@ -87,12 +87,7 @@ public class CustomerController {
 	}
 
 	
-	@GetMapping("getcustomerById")
-	public Customer getcustomerById(@PathVariable Long id) {
-		Customer customer = custrepo.findBycustomerId(id);
-		System.out.println(customer);
-		return customer;
-	}
+
 	
 	
 	@PutMapping("updatecust/{id}")
