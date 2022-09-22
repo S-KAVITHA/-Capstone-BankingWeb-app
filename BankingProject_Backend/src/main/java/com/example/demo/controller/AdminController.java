@@ -17,13 +17,13 @@ import com.example.demo.model.ChequeRequest;
 import com.example.demo.model.Customer;
 import com.example.demo.model.FundsTransfer;
 import com.example.demo.model.Transaction;
-import com.example.demo.model.Users;
+import com.example.demo.model.BankAdmin;
 import com.example.demo.repository.AccountRepository;
 import com.example.demo.repository.ChequeRequestRepository;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.repository.FundsTransferRepository;
 import com.example.demo.repository.TransactionRepository;
-import com.example.demo.repository.UsersRepository;
+import com.example.demo.repository.BankAdminRepository;
 
 //@author Kavitha S
 
@@ -35,7 +35,7 @@ import com.example.demo.repository.UsersRepository;
 public class AdminController {
 
 	@Autowired
-	UsersRepository userrepo;
+	BankAdminRepository adminrepo;
 
 	@Autowired
 	CustomerRepository custrepo;
@@ -52,17 +52,17 @@ public class AdminController {
 	@Autowired
 	ChequeRequestRepository chequerepo;
 
-	// Add Customer to table
+	// Add admin to table
 	@PostMapping("addadmin")
-	public Users addadmin(@RequestBody Users user) {
+	public BankAdmin addadmin(@RequestBody BankAdmin user) {
 		System.out.println(user);
-		return userrepo.save(user);
+		return adminrepo.save(user);
 	}
 
-	// Get Customer by emailId
+	// Get admin by emailId
 	@GetMapping("getadminByEmail/{emailId}")
-	public List<Users> getadminByEmail(@PathVariable String emailId) {
-		return userrepo.findByemailId(emailId);
+	public List<BankAdmin> getadminByEmail(@PathVariable String emailId) {
+		return adminrepo.findByemailId(emailId);
 	}
 
 	// Get Customer by status
